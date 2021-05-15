@@ -10,7 +10,28 @@ The Seconnd Container to run is the redis which store the hit count. just downlo
 docker run -d -p 5000:5000 docker.io/jagadesh1982/hits:latest
 docker run -d redis:alpine
 
+***	
 
+
+
+*** 
+
+testing-service-application : The second application is the testing-service application. this testing-service application is 2 parts. one is the testing-service and other is the second-service. the second-service application pushes data into the testing-service application and we can consume the application using the link
+http://localhost:9876/read
+
+we need to create both container as
+docker run -d -p 9876:9876 -v ${pwd):/demo ocker.io/jagadesh1982/testing-service
+docker run -d -v ${pwd):/demo docker.io/jagadesh1982/second-service
 
 
 ***	
+
+***	
+Third application is a simple application. 
+***	
+
+
+***	
+All Application have their respective docker-compose files available. We can run directly docker-compose build and docker-compose up
+***	
+
