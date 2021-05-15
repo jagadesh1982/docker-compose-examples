@@ -1,0 +1,19 @@
+version: '2'
+services:
+ testing-service:
+     build: ./testing-service
+     container_name: first
+     image: docker.io/jagadesh1982/testing-service
+     ports:
+       - "9876:9876"
+     volumes:
+       - ./:/demo
+ second-service:
+     build: ./testing-service/second-service
+     image: docker.io/jagadesh1982/second-service
+     container_name: second
+     working_dir: /
+     environment:
+       Name: SECOND_SERVICE
+     volumes:
+       - ./:/demo
